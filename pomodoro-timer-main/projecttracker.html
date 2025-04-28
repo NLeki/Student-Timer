@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='projects.html'">Projects</button>
+        <button onclick="location.href='completedprojects.html'">Completed Projects</button>
+        <button onclick="location.href='projecttracker.html'">Project Tracker</button>
+    </div>
+
+    <div class="tracker-container">
+        <h2>Project Progress Tracker</h2>
+        <input type="text" id="taskInput" placeholder="Enter project task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="tracker.js"></script>
+</body>
+</html>

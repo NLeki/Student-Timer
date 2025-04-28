@@ -1,0 +1,385 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* --------video background----------*/
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/* Timer styles */
+
+#timer-container {
+    position: relative;
+    margin: 50px auto;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+#message-box{
+    color: #f5ccd7;
+    font-size: larger;
+    font-display:initial;
+    font-weight: bold;
+    font-size: xx-large;
+    
+}
+.content{   
+    color: #6d6f19;
+    font-size: xx-large;
+}
+
+/*#sun-moon {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background: rgb(242, 187, 3);
+    margin: auto;
+    box-shadow: 10px 10px 40px 40px rgb(246, 226, 160);
+}*/
+
+/*   ---------  Sun Clock  -------  */
+
+
+#sun-moon {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    background-color: rgb(242, 187, 3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 10px 10px 40px 40px rgb(136, 112, 34);
+}
+
+/* -------------Clock hands      need to fix -----------*/
+.hand {
+    position: absolute;
+    margin:auto;
+    width: 50%;
+    height: 2px;
+    background-color: black;
+    top: 50%;
+    transform-origin:100%;
+    transform: rotate(0deg);
+    transition: transform 0.1s linear;
+}
+
+.hour-hand {
+    width: 35%;
+    height: 4px;
+    background-color: black;
+    margin: auto;
+}
+
+.minute-hand {
+    width: 45%;
+    height: 3px;
+    background-color: black;
+    margin:auto;
+}
+
+.second-hand {
+    width: 50%;
+    height: 2px;
+    background-color: red;
+}
+
+/* Center dott of the clock         need to center */
+
+/*.center-dot {
+    width: 8px;
+    height: 8px;
+    margin:auto;
+    background-color: black;
+    border-radius: 10%;
+    position:fixed;
+    z-index: 10;
+    
+}*/
+
+/* Numbers container of the clock */
+
+.numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Number styling */
+.num {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(19, 15, 15);
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    transform-origin: center;
+}
+
+/*------------------------------------------------*/
+
+.night #sun-moon {
+    background: rgb(211, 218, 229);
+    box-shadow: 10px 10px 10px 10px rgb(232, 237, 245);
+    
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 20px;
+}
+
+nav ul li button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(5, 103, 54);
+    border-radius: 50%;
+    font-size: 16px;
+    color: white;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0px 4px 6px rgba(138, 134, 117, 0.2);
+}
+
+nav ul li button:hover {
+    background-color: rgb(108, 129, 113);
+    transform: translateY(5px);
+    box-shadow: 0px 2px 4px rgba(87, 118, 108, 0.2);
+}
+
+/* --------Timer Buttons -----*/
+
+button, #start, #pause, #reset, #delete, #stop {
+    border-radius: 50%;
+    background-color: rgb(156, 152, 102);
+    border: none;
+    font-size: 12px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 5px 5px 5px 5px rgba(125, 117, 109, 0.2);
+}
+
+button:hover, #start:hover, #pause:hover, #reset:hover, #delete:hover, #stop:hover {
+    background-color: rgb(176, 145, 45);
+    transform: translateY(4px);
+    box-shadow: 0px 2px 4px rgba(91, 101, 96, 0.2);
+}
+
+
+
+
+/*------ Calendar ----*/
+
+#calendar-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#calendar-weekdays, #calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+#calendar-weekdays div {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.calendar-day {
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 80px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.calendar-day.today {
+    background: rgb(238, 197, 214);
+    color: white;
+}
+
+.calendar-day.noted {
+    background: rgb(248, 215, 116);
+    position: relative;
+}
+
+.note-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 14px;
+}
+/*-----Clean the code bellow ---------*/
+
+/*body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #a8df8e;
+    transition: background 0.5s ease-in-out;
+}*/
+
+/*.nighttime {
+
+    background-color: #2a2a72;
+    color: white;
+}
+
+.daytime {
+    background-color: #a8df8e;
+    color: black;
+}*/
+
+.timer-container {
+    margin-top: 50px;
+}
+
+#timer {
+    font-size: 3em;
+    margin: 20px;
+}
+
+.buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.calendar-container {
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #1b1a1a;
+    background: white;
+    width: 600px;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.calendar-day {
+    padding: 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.calendar-day.today {
+    background: rgb(209, 190, 155);
+    color: white;
+}
+
+.calendar-day.noted {
+    background: rgb(188, 188, 6);
+}
+
+.hidden {
+    display: none;
+}
+
+/*        ---- Projects page -------              */
+
+
+.projects-container {
+    margin: 30px auto;
+    padding: 20px;
+    width: 50%;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+/*             Project Tracker  page      */
+
+
+.tracker-container {
+    margin: 30px auto;
+    padding: 20px;
+    width: 50%;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+#taskInput {
+    width: 80%;
+    padding: 10px
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+/*          Completed Projects   page         */
+
+#completed{
+    margin: 30px auto;
+    padding: 20px;
+    width: 50%;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+#completedList {
+    list-style: none;
+    padding: 0;
+}
